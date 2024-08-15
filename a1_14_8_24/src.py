@@ -1,12 +1,20 @@
+import csv
+
 dict_ = {1:'one',2:'two',3:'three',4:'four',5:'five'}
 
-import csv
-import pandas as pd
-df=pd.read_csv('/home/anisha/Assignment/a1_14_8_24/test1.csv')
-l=df.columns.values.tolist()
+def get_fun(str1):
+    print(str1)
+def create_fun(str1,str2,d):
+    d.update({str1:str2})
+    print(d)
 
-if l[0]=='GET':
-    print(l[1])
-else:
-    dict_.update({l[1]:l[2]})
-    print(dict_)
+with open('test1.csv', 'r') as read_obj: 
+    csv_reader = csv.reader(read_obj) 
+    list_of_csv = list(csv_reader) 
+
+    #print(list_of_csv[1][0]) 
+    for i in range(len(list_of_csv)):
+        if(list_of_csv[i][0]=='GET'):
+            get_fun(list_of_csv[i][1])
+        else:
+            create_fun(list_of_csv[i][1],list_of_csv[i][2],dict_)
