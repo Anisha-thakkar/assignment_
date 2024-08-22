@@ -24,6 +24,7 @@ while True:
             file.close()
 
             for index,item in enumerate(todos):
+                #removing /n
                 item=item.strip("\n")
                 row= f"{index}-{item}"
                 print(row)
