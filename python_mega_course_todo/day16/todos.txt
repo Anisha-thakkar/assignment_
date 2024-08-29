@@ -6,4 +6,8 @@ five
 final
 final2
 nice
-weather
+weatherlovely
+ne
+pre
+lovely
+nice
